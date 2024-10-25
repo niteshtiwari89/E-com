@@ -17,11 +17,11 @@ app.use(express.json())
 //middleware
 const corsOptions = {
      origin: 'https://e-com-flame.vercel.app', // Only allow this origin
-    // methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
-    // credentials: true, // Enable set cookie
+    methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
+    credentials: true, // Enable set cookie
     optionsSuccessStatus: 200, 
   };
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
 
 
