@@ -12,6 +12,7 @@ import orderRouter from "./routes/orderRoutes.js"
 const app = express()
 const port = 4000
 
+app.use(express.json())
 
 //middleware
 const corsOptions = {
@@ -20,7 +21,6 @@ const corsOptions = {
     // credentials: true, // Enable set cookie
     optionsSuccessStatus: 200, 
   };
-app.use(express.json())
 app.use(cors(corsOptions))
 
 
