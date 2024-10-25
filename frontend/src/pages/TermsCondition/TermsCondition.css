@@ -1,0 +1,76 @@
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.text-3xl {
+    font-size: 3rem;
+    font-weight: 700;
+    color: darkgreen;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-gray-100 {
+    background-color: #f7fafc;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .text-3xl {
+        font-size: 1.5rem; /* Reduce font size on smaller screens */
+    }
+
+    .text-2xl {
+        font-size: 1.25rem;
+    }
+
+    .container {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-3xl {
+        font-size: 1.25rem; /* Further reduce font size for mobile */
+    }
+
+    .text-2xl {
+        font-size: 1rem;
+    }
+
+    .container {
+        max-width: 100%; /* Make full-width on small devices */
+        padding: 5px; /* Reduce padding even more for mobile */
+    }
+
+    .p-4 {
+        padding: 0.5rem; /* Adjust padding for mobile */
+    }
+}

@@ -1,0 +1,171 @@
+body {
+  font-family: 'sans-serif';
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px; /* Added padding for smaller screens */
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #00296b;
+}
+
+p {
+  color: #666;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.md\:grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.lg\:grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.team-member-photo {
+  width: 100%;
+  height: auto;
+  max-width: 150px; /* Ensure images don't exceed this width */
+  border-radius: 50%;
+}
+
+.rounded-full {
+  border-radius: 50%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-gray-600 {
+  color: #666;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+  }
+
+  .team-member-photo {
+      width: 80px; /* Adjust photo size */
+      height: 80px;
+  }
+
+  .text-3xl {
+      font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .text-xl {
+      font-size: 1rem; /* Adjust font size */
+  }
+
+  .grid {
+      grid-template-columns: 1fr; /* Single column grid for smaller screens */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+      padding: 0 15px; /* Standard padding */
+  }
+
+  .team-member-photo {
+      width: 100px; /* Adjust photo size */
+      height: 100px;
+  }
+
+  .text-3xl {
+      font-size: 1.75rem; /* Adjust font size */
+  }
+
+  .text-xl {
+      font-size: 1.125rem; /* Adjust font size */
+  }
+
+  .grid {
+      grid-template-columns: 1fr; /* Still keep single column for better readability */
+  }
+}
+
+/* Medium devices (landscape tablets and small desktops, 768px and up) */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1440px and up) */
+@media (min-width: 1440px) {
+  .container {
+      max-width: 1400px; /* Increase max-width for larger screens */
+  }
+}
