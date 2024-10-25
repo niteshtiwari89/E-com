@@ -15,8 +15,10 @@ const port = 4000
 
 //middleware
 const corsOptions = {
-    origin: 'https://e-com-flame.vercel.app/',
-    optionsSuccessStatus: 200
+    origin: 'https://e-com-flame.vercel.app', // Only allow this origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Enable set cookie
+    optionsSuccessStatus: 204, 
   };
 app.use(express.json())
 app.use(cors(corsOptions))
