@@ -14,8 +14,13 @@ const port = 4000
 
 
 //middleware
+const corsOptions = {
+    origin: 'https://e-com-flame.vercel.app/',
+    optionsSuccessStatus: 200
+  };
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
+
 
 
 //endpoint for testing
