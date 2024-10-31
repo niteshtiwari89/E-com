@@ -24,7 +24,7 @@ const port = 4000
 
 
 const corsOptions = {
-    origin:'https://e-com-flame.vercel.app/',
+    origin:['https://e-com-flame.vercel.app/', 'https://e-com-admin-phi.vercel.app/'],
      methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }
