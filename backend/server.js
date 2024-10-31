@@ -9,6 +9,7 @@ import orderRouter from "./routes/orderRoutes.js"
 
 
 
+
 const connectDB = async()=>{
     await mongoose.connect(process.env.MONGODB_URI, {
     dbName: 'something'}).then(()=>console.log("DB connected"))
@@ -48,6 +49,3 @@ connectDB();
 app.listen(port, () => {
     console.log(`successfully running in the port http://localhost:${4000}`)
 })
-
-
-module.exports = app;
