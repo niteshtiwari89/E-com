@@ -22,7 +22,6 @@ const app = express()
 const port = 4000
 
 
-
 const corsOptions = {
     origin:['https://e-com-flame.vercel.app/', 'https://e-com-admin-phi.vercel.app/'],
      methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -31,6 +30,7 @@ const corsOptions = {
 //middleware
 app.use(express.json())
 app.use(cors(corsOptions))
+app.use('/upload', express.static(path.join(__dirname, 'upload')));
 
 
 //endpoint for testing
