@@ -22,6 +22,12 @@ const app = express()
 const port = 4000
 
 
+
+const corsOptions = {
+    origin:'https://e-com-flame.vercel.app/',
+     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}
 //middleware
 app.use(express.json())
 app.use(cors())
