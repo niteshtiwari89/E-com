@@ -1,11 +1,22 @@
 import express from "express"
 import cors from "cors"
 import 'dotenv/config'
-import { connectDB } from "./config/db.js"
+import mongoose from "mongoose";
+// import { connectDB } from "./config/db.js"
 import foodRoutes from "./routes/foodRoutes.js"
 import userRouter from "./routes/userRoutes.js"
 import cartRouter from "./routes/cartRoutes.js"
 import orderRouter from "./routes/orderRoutes.js"
+
+
+
+dotenv.config();
+export const connectDB = async()=>{
+    await mongoose.connect(process.env.MONGODB_URI, {
+    dbName: 'something'}).then(()=>console.log("DB connected"))
+    .catch(error => console.log(error))
+    
+}
 
 
 //app config
