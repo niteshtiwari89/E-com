@@ -163,7 +163,7 @@ export const Add = ({ url }) => {
 
     // Append all images to the form data
     images.forEach((image) => {
-      formData.append("images[]", image); // Use a singular name or an array
+      formData.append("images", image); // Use a singular name or an array
     });
 
     try {
