@@ -9,7 +9,7 @@ import orderRouter from "./routes/orderRoutes.js"
 
 
 
-connectDB = async()=>{
+const connectDB = async()=>{
     await mongoose.connect(process.env.MONGODB_URI, {
     dbName: 'something'}).then(()=>console.log("DB connected"))
     .catch(error => console.log(error))
@@ -41,7 +41,7 @@ app.use("/api/order", orderRouter)
 
 
 //database connection
-connectDB()
+connectDB();
 
 
 //port listening
