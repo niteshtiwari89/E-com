@@ -34,7 +34,11 @@ import fs from 'fs';
 const foodRoutes = express.Router();
 
 // Set up storage engine
-const storage = multer.diskStorage();
+const storage = multer.diskStorage({
+       destination:"upload",
+  filename:(req,file,cb)=>{
+         return cb(null,`${Date.now()}${file.originalname}`)
+   });
 const upload = multer({ storage });
 
 // Endpoints
