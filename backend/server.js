@@ -5,7 +5,6 @@ import mongoose from "mongoose";
 import foodRoutes from "./routes/foodRoutes.js"
 import userRouter from "./routes/userRoutes.js"
 import cartRouter from "./routes/cartRoutes.js"
-import path from 'path'
 import orderRouter from "./routes/orderRoutes.js"
 
 
@@ -31,7 +30,6 @@ const corsOptions = {
 //middleware
 app.use(express.json())
 app.use(cors(corsOptions))
-app.use('/upload', express.static(path.join(__dirname, 'upload')));
 
 
 //endpoint for testing
