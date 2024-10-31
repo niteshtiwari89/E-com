@@ -13,7 +13,16 @@ const foodRoutes = express.Router();
 //         return cb(null,`${Date.now()}${file.originalname}`)
 //     }
 // })
-const storage = multer.memoryStorage(); // Changed to memoryStorage
+const storage = multer.memoryStorage(
+  {
+    destination: (req, file, cb) => {
+        cb(null, 'upload'); // Ensure this directory exists
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`); // Create a unique filename
+    }
+}
+); // Changed to memoryStorage
 const upload = multer({ storage });
 // const upload= multer({storage:storage})
 // upload.single("image"),
