@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import foodRoutes from "./routes/foodRoutes.js"
 import userRouter from "./routes/userRoutes.js"
 import cartRouter from "./routes/cartRoutes.js"
+import path from 'path'
 import orderRouter from "./routes/orderRoutes.js"
 
 
