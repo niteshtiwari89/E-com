@@ -7,6 +7,7 @@ import userRouter from "./routes/userRoutes.js"
 import cartRouter from "./routes/cartRoutes.js"
 import orderRouter from "./routes/orderRoutes.js"
 
+
 export const connectDB = async()=>{
     await mongoose.connect(process.env.MONGODB_URI, {
     dbName: 'something'}).then(()=>console.log("DB connected"))
