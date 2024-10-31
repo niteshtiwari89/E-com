@@ -8,13 +8,12 @@ import cartRouter from "./routes/cartRoutes.js"
 import orderRouter from "./routes/orderRoutes.js"
 
 
-export const connectDB = async()=>{
+connectDB = async()=>{
     await mongoose.connect(process.env.MONGODB_URI, {
     dbName: 'something'}).then(()=>console.log("DB connected"))
     .catch(error => console.log(error))
     
-}
-
+    }
 
 //app config
 const app = express()
@@ -50,3 +49,4 @@ app.listen(port, () => {
 })
 
 
+module.exports = app;
