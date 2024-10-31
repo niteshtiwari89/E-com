@@ -39,8 +39,8 @@ const storage = multer.diskStorage({
         cb(null, 'upload/'); // Specify the destination folder for uploads
     },
   filename:(req,file,cb)=>{
-         return cb(null,`${Date.now()}${file.originalname}`);
-   });
+         return cb(null,`${Date.now()}${file.originalname}`);}
+});
 const upload = multer({ storage });
 
 // Endpoints
