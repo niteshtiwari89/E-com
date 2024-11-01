@@ -26,6 +26,8 @@ const addFood = async(req,res)=>{
 
         const image_filenames = uploadResults.map(result => result.secure_url);
 
+        console.log('Uploaded Image URLs:', image_filenames);
+
         const food = new foodModel({
             name: req.body.name,
             description: req.body.description,
