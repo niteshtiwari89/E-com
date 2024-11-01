@@ -30,13 +30,25 @@ import express from 'express';
 import { addFood, listFood, removeFood } from '../controller/foodController.js';
 import multer from 'multer';
 import fs from 'fs';
+import path from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const foodRoutes = express.Router();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const uploadDir = path.join(__dirname, '../upload'); // Use __dirname for an absolute path
+
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 
 // Set up storage engine
 const storage = multer.diskStorage({
          destination: (req, file, cb) => {
-        cb(null, 'upload'); // Specify the destination folder for uploads
+        cb(null, uploadDir); // Specify the destination folder for uploads
     },
   filename:(req,file,cb)=>{
          return cb(null,`${Date.now()}${file.originalname}`);}
