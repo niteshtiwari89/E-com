@@ -1,7 +1,5 @@
-
 // import {v2 as cloudinary} from 'cloudinary';
 // const cloudinary = require('cloudinary').v2;
-
 import cloudinaryPkg from 'cloudinary'; // Default import
 const { v2: cloudinary } = cloudinaryPkg; 
 
