@@ -19,7 +19,7 @@ const addFood = async(req,res)=>{
         //     return cloudinary.uploader.upload(file.path); // Use file.path for Cloudinary
         // });
 
-         const uploadPromises = req.files.map(file => file => cloudinary.uploader.upload(file.path));
+         const uploadPromises = req.files.map(file => cloudinary.uploader.upload(file.path));
 
 
         const uploadResults = await Promise.all(uploadPromises);    
