@@ -35,7 +35,6 @@ import cloudinary from '../config/cloudinary.js';
 
 const foodRoutes = express.Router();
 
-
 // Set up storage engine
 const storage = new CloudinaryStorage({
     cloudinary:cloudinary,
