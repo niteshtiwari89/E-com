@@ -30,7 +30,7 @@ import express from 'express';
 import { addFood, listFood, removeFood } from '../controller/foodController.js';
 import multer from 'multer';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
-import cloudinary from '../config/cloudinary.js';
+import {cloudinary} from '../config/cloudinary.js';
 
 
 const foodRoutes = express.Router();
