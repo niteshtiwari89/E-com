@@ -1,5 +1,8 @@
 // import {v2 as cloudinary} from 'cloudinary';
-const cloudinary = require('cloudinary').v2;
+// const cloudinary = require('cloudinary').v2;
+
+import cloudinaryPkg from 'cloudinary'; // Default import
+const { v2: cloudinary } = cloudinaryPkg; 
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
