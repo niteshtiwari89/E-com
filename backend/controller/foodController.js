@@ -15,9 +15,12 @@ const addFood = async(req,res)=>{
             throw new Error("No files uploaded");
         }
 
-         const uploadPromises = req.files.map(file => {
-            return cloudinary.uploader.upload(file.path); // Use file.path for Cloudinary
-        });
+        //  const uploadPromises = req.files.map(file => {
+        //     return cloudinary.uploader.upload(file.path); // Use file.path for Cloudinary
+        // });
+
+         const uploadPromises = req.files.map(file => file => cloudinary.uploader.upload(file.path));
+
 
         const uploadResults = await Promise.all(uploadPromises);    
 
