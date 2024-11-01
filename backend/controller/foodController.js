@@ -1,8 +1,4 @@
 import foodModel from "../model/foodModel.js";
-import fs from "fs";
-
-
-//add food item
 
 const addFood = async(req,res)=>{
     
@@ -17,7 +13,13 @@ const addFood = async(req,res)=>{
             throw new Error("No files uploaded");
         }
 
-        const image_filenames = req.files.map(file => file.filename);
+         const uploadPromises = req.files.map(file => {
+            return cloudinary.uploader.upload(file.path); // Use file.path for Cloudinary
+        });
+
+        const uploadResults = await Promise.all(uploadPromises);    
+
+        const image_filenames = uploadResults.map(result => result.secure_url);
 
         const food = new foodModel({
             name: req.body.name,
@@ -48,16 +50,38 @@ const listFood = async(req,res)=>{
 }
 
 //remove food
-const removeFood= async (req,res)=>{
+// const removeFood= async (req,res)=>{
+//     try {
+//         const food = await foodModel.findById(req.body.id)
+//         fs.unlink(`upload/${food.image}`,()=>{})
+//         await foodModel.findByIdAndDelete(req.body.id)
+//         res.json({success:true,message:"food removed"})
+//     } catch (error) {
+//         console.log(error)
+//         res.json({success:false,message:"error"})
+//     }
+// }
+
+const removeFood = async (req, res) => {
     try {
-        const food = await foodModel.findById(req.body.id)
-        fs.unlink(`upload/${food.image}`,()=>{})
-        await foodModel.findByIdAndDelete(req.body.id)
-        res.json({success:true,message:"food removed"})
+        const food = await foodModel.findById(req.body.id);
+        if (!food) {
+            throw new Error("Food item not found");
+        }
+
+        // Remove images from Cloudinary
+        const deletePromises = food.image.map(imageUrl => {
+            const publicId = imageUrl.split('/').pop().split('.')[0]; // Extract public ID from URL
+            return cloudinary.uploader.destroy(publicId);
+        });
+
+        await Promise.all(deletePromises);
+        await foodModel.findByIdAndDelete(req.body.id);
+        res.json({ success: true, message: "Food removed" });
     } catch (error) {
-        console.log(error)
-        res.json({success:false,message:"error"})
+        console.log(error);
+        res.json({ success: false, message: "error" });
     }
-}
+};
 
 export {addFood,listFood,removeFood}
