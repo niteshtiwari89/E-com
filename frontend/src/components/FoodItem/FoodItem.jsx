@@ -56,7 +56,7 @@ export const FoodItem = ({ id, name, price, description, images }) => {
     <div className="food-item">
       <div className="food-item-img-container">
         <img
-          src={`${url}/images/${images[0]}`}
+          src={`${images[0]}`}
           alt={name}
           className="food-item-image"
         />
