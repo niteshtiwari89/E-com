@@ -61,7 +61,7 @@ export const Cart = () => {
                     <tbody>
                       <tr className="cart-items-title cart-items-item">
                         <p>
-                          <img src={url + "/images/" + item.image[0]} alt="" />
+                          <img src={item.image[0]} alt="" />
                         </p>
                         <p>{item.name}</p>
                         <p>₹{item.price}</p>
