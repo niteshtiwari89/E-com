@@ -52,6 +52,8 @@ export const FoodItem = ({ id, name, price, description, images }) => {
     removeFromCart(id);
   };
 
+
+  
   return (
     <div className="food-item">
       <div className="food-item-img-container">
