@@ -51,9 +51,7 @@ export const FoodItem = ({ id, name, price, description, images }) => {
     e.stopPropagation(); // Prevent the link click from firing
     removeFromCart(id);
   };
-
-
-  
+ 
   return (
     <div className="food-item">
       <div className="food-item-img-container">
