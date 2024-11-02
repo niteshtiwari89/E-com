@@ -419,7 +419,7 @@ const ProductPage = () => {
           {images.length > 0 ? (
             <>
               <img
-                src={`${url}/images/${images[currentImage]}`}
+                src={`${images[currentImage]}`}
                 alt={`Product image ${currentImage + 1}`}
                 className="product-image"
               />
